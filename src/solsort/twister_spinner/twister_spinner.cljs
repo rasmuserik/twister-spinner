@@ -54,7 +54,7 @@
 (db! [:language] :silent)
 (db! [:interval] 5000)
 (defn limb [o]
-  (let [size (* 0.45 (min js/innerHeight js/innerWidth))]
+  (let [size (* 0.49 (min js/innerHeight js/innerWidth))]
    [:div
     {:style
      {:display :inline-block
@@ -98,8 +98,6 @@
 (defn main []
   [:div
    {:style {:text-align :center}}
-   [:div.ui.container
-    [:div.ui.input
     [input {:type :select
             :db [:interval]
             :style {:background :transparent
@@ -124,9 +122,8 @@
            :options {"Silent" :silent
                      "English" :english
                      "Danish" :danish
-                     }}]]
-]
-   [:br]
+                     }}]
+   [:br] [:br]
    [limb :left-hand]
    [limb :right-hand]
    [:br]
